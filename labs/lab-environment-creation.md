@@ -12,7 +12,7 @@ In this lab, you will create an Azure Search service and a storage account. We r
 
 1. For the **URL**, that is the service name, choose a name that you can easily remember. We will use it dozens of times in the next labs. The name of the service in the screenshots of this lab won't be available, you must create your own service name.
 
-1. For **Resource group**, create a resource group to contain all the resources you create in this tutorial. This makes it easier to clean up the resources after you have finished the tutorial.
+1. For **Resource group**, create a resource group named `kmb` to contain all the resources you will create in this Knowledge Mining Bbootcamp. In addition to facilitating organization and visualization in the portal, using a single resource group helps you, if necessary at the end of the training, remove all services created. If you want to keep this solution up and running, for demos and POCs in minutes with your own data, this resources cleaning isn't necessary.
 
 1. For **Location**, choose one of the regions below, Cognitive Search is not available in all Azure regions.
 - West Central US
@@ -50,7 +50,7 @@ Cloning the repo will download all the training materials to your computer, incl
 
 1. In the Cortana search bar, type "git bash" and select "Git Bash Desktop App", or type "cmd" and select "Command Prompt".
 
-1. Next, type `cd c:` then enter. Now, you will be in the root directory of your computer. If you don't have permission to create folders and files here, navigate to a folder where you can download the Bootcamp materials.
+1. Next, type `cd c:\` then enter. Now, you will be in the root directory of your computer. If you don't have permission to create folders and files here, navigate to a folder where you can download the Bootcamp materials.
 
 1. Type and enter `git clone https://github.com/Azure/LearnAI-KnowledgeMiningBootcamp.git`
 
@@ -79,6 +79,12 @@ The enrichment pipeline pulls from Azure data sources. Source data must originat
 Use the portal to confirm that all of the 21 files are uploaded to the root directory of the **basicdemo** container.
 
 Also in the portal, find the storage account tab called **Access keys**, it has information you will use in the next lab. Get familiar with the blue icons to copy the information for storage account name, key and connection string. They prevent partial copy of the codes. Extra care with the connection string, it is long and finished with **core.windows.net**.
+
+## Step 4 - Create the Cognitive Services Account
+
+As explained in the [introduction](../resources/md-files/introduction.md) and in the [Solution Architecture](../resources/md-files/solution-architecture.md): Starting December 21, 2018, you will need to [associate](https://docs.microsoft.com/en-us/azure/search/cognitive-search-attach-cognitive-services) a Cognitive Services resource to your Azure Cognitive Search solution, in order to enrich more than 20 documents per day. This is the case of this training.
+
+Follow [this](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account) process to create a Cognitive Account **in the same region and resource group** you choose in the previous steps. Name your resource as `my-cog-serv` and use the `S0` pricing tier. It will give you access to Vision, Language and Search capabilities, exactly what is required for this training.
 
 ## Next Step
 
