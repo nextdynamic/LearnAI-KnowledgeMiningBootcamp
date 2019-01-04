@@ -124,7 +124,11 @@ The service limits for this training are listed below. For the complete list, cl
 
 ## Lab Steps
 
+<<<<<<< HEAD
 Now let's start the hands-on lab. Since you have finished the [Environment Creation]([Text Skills Lab](../labs/lab-environment-creation.md), you just need to follow the steps below.
+=======
+Now let's start the hands-on lab. Since you have finished the [Environment Creation](../labs/lab-environment-creation.md), you just need to follow the steps below.
+>>>>>>> origin/master
 
 ### Step 1 - Import Data
 
