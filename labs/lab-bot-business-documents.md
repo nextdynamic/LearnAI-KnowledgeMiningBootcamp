@@ -18,7 +18,8 @@ The image below describes the bot created in this lab. Please notice that:
 
 This lab's bot uses the Microsoft Bot Framework (V4), an open-source SDK available in Node.js, C#, Python and Java.
 
-You can use the Microsoft Bot Framework to create a single code base to deploy with Azure Bot Service, which allows you to surface your bot on many channels (Skype, Cortana, Facebook, etc). The key concepts to know for this lab includes:
+You can use the Microsoft Bot Framework to create a single code base to deploy with Azure Bot Service, which allows you to surface your bot on many 
+channels (Skype, Cortana, Facebook, etc). The key concepts to know for this lab includes:
 
 + **Adapter:** The Bot orchestrator, routing incoming and outgoing communication and authentication. For any interaction, it creates a `TurnContext` object and passes it to the bot application logic
 
@@ -35,6 +36,11 @@ You can use the Microsoft Bot Framework to create a single code base to deploy w
 ![Dialogs hierarchy](../resources/images/lab-bot/diagram.png)
 
 + **State:** Stores data relating to either the conversation or the user. State is a middleware component. Available storage layers are Memory (data is cleared each time the bot is restarted), Blob Storage and CosmosDB. **State management** automates the reading and writing of your bot's state to the underlying storage layer.
+
+Using the image below, check how all those concepts are integrated in the internal architecture of a bot application.
+
+![Bots Concepts](../resources/images/lab-bot/bots-concepts-middleware.png)
+
 
 ## Step 1 - Download and install the Bot Framework Emulator
 
@@ -69,7 +75,7 @@ There is a lot of "stuff" in this solution. If you've worked with bots before, y
 
 Near the bottom of the Solution Explorer menu, you will see the Constants.cs file. Open it with a double click. You'll notice that you need to fill in your search service name, search service key, and index name. Since you've created and tested the index in Postman, you should have these readily available. If not, you can open the Azure portal and locate your Azure Search service to get the needed information. Fill in your information and save the file (you can use `CTRL` + `S`).
 
->Note! The Bot code has many references to the index fields. If you did not named the content moderator field as **moderatedText** or the OCR field as **myOcrText**, you will need to change the code to use your fields names. The files to be changed are: /Dialogs/ModeratedContentSearchDialog.cs and /Models/SearchHit.cs .
+>Note! The Bot code has many references to the index fields. If you did not named the content moderator field as **needsModeration** or the OCR field as **myOcrText**, you will need to change the code to use your fields names. The files to be changed are: /Dialogs/ModeratedContentSearchDialog.cs and /Models/SearchHit.cs .
 
 ## Step 3 - Interacting with your Cognitive Search Bot
 
@@ -83,7 +89,7 @@ This should open a chat window with your bot. You can start by saying some sort 
 
 You should now be able to submit search requests, and your results should be returned. Try searching for various items and inspecting your results. If you're unsure what to search for, here are a few suggestions: "satya nadella", "financial reporting", "security issues", "Azure", "cognitive services", "cloud", "sql server", "learnai", "reports". Try to search using both the menu button and typing search + enter + the term you want to search for.
 
-## Step 4 (optional) - Using break points to understand the search flow
+## Step 4 - Using break points to understand the search flow
 
 If you want to dive slightly deeper into calling the Azure Cognitive Search API and processing the results, we have provided some guidance on how to do so with break points.  
 
@@ -102,6 +108,11 @@ Next, run the bot (select `F5`) and on the Bot Emulator, search for something. A
 Using break points for debugging and seeing how calls are made and processed is a very valuable tool. If you'd like to learn more, [start here](https://docs.microsoft.com/en-us/visualstudio/debugger/getting-started-with-the-debugger?view=vs-2017).  
 
 > Want to dive deeper into bot development? Check out the [LearnAI: Azure Cognitive Services Bootcamp](https://azure.github.io/LearnAI-Bootcamp/emergingaidev_bootcamp) which integrates multiple Cognitive Services to create an intelligent agent.
+
+## Step 5 - Optional - Deploy your Bot
+
+This step is optional. Folllow [this](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-deploy-az-cli?view=azure-bot-service-4.0) tutorial and deploy your Bot to Azure. 
+After the deployment, test your bot using the Azure Portal. You can also try to [add your bot to Microsoft Teams](https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/bots/bots-overview).
 
 ## Cleaning your environment
 

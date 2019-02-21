@@ -35,7 +35,6 @@ The diagrams below explain some of the scenarios for Cognitive Search
 ![Simple Scenario](../resources/images/lab-final-case/simple.png)
 ![Complex Scenario 1](../resources/images/lab-final-case/complex1.png)
 ![Complex Scenario 2](../resources/images/lab-final-case/complex2.png)
-![Complex Scenario 3](../resources/images/lab-final-case/complex3.png)
 ![Complex Scenario 4](../resources/images/lab-final-case/complex4.png)
 
 ## Case Study
@@ -55,6 +54,7 @@ Using what you've learned throughout the course, develop a potential Cognitive S
 1. List of the predefined and custom skills
 1. The skills sequence and how they are integrated
 1. The necessary Azure Search tier for this solution
+1. List other Data & AI Azure services that could improve the search experience, including all labs, experiments, demos, and breaking news you saw in this training. Also including everything you know about Azure, AI, Data Science, and Analytics.
 
 ## Cleaning your environment - Again
 

@@ -72,17 +72,16 @@ Expected:
   + Multiple datasets:
     + More than one datasource: product catalog, reviews, ERP, CRM
     + Data source is too big, data needs to be partitioned
+    + Datasources updated in different times
   + Multiple Indexes
     + One for each region, in each languages
     + Each region demands different fields or ranking or Analyzer or suggester
-  + Multiple Indexers
-    + Datasources updated in different times
-    + Each product or region requires different schedules
   + Multiple Skillsets
+    + Each product or region requires different schedules
     + Partition the data in 2: images and not images, to save processing time and money with specific skillset for each type of data.
     + VIVINO/CREDIT/Logistics/Other custom skillset with a different schedule update - "runs once a day"
 
-+ Sizing discussion: [Tier](https://azure.microsoft.com/en-us/pricing/details/search/) x [SLA](https://azure.microsoft.com/en-us/support/legal/sla/search/v1_0/), Units. For SLA is required 2 or more copies. Basic tear limit is 2 GB, Standard has 300 GB total. **Also, it is required at least Basic tear to have replicas. And the replica can be located in the Brazil South region, reducing latency for South America clients.**
++ Sizing discussion: [Tier](https://azure.microsoft.com/en-us/pricing/details/search/) x [SLA](https://azure.microsoft.com/en-us/support/legal/sla/search/v1_0/), Units. For SLA is required 2 or more copies. Basic tiar limit is 2 GB, Standard has 300 GB total. **Also, it is required at least Basic tiar to have replicas. And the replica can be located in the Brazil South region, reducing latency for South America clients.**
 
 + Skills
   + Text Skills
@@ -93,14 +92,14 @@ Expected:
   + Entity Extraction (location, organizations)
   + Important to discuss the order of the transformations
 
-+ Other AI involved
++ Other Data & AI that could be used
   + Translation API
-  + Recommendation API (Preview in Jan 2018)
+  + Personalization API (Preview in Jan 2018)
   + Entity Linking API for the detected entities
   + Bing Search in the Bot to improve the search experience
+  + CosmosDB as a data source for the product catalog
+  + AML for custom AI for published as an API for: price optimization, campaign optimization, etc
 
 + South America means 2 more languages after the original docs in English: Portuguese and Spanish. It is expected discussions like:
   + Save all fields in 3 languages? Storage costs. Write once and read many
   + Translate on the fly? Data out and API usage costs, latency
-
-+ Other Technologies: CosmosDB for the product catalog? AML/Containers for extra AI capabilities?
